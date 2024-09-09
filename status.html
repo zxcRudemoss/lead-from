@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Statuses</title>
+</head>
+<body>
+    <h1>Lead Statuses</h1>
+    <label for="dateFilter">Filter by Date:</label>
+    <input type="date" id="dateFilter">
+    <button onclick="fetchStatuses()">Apply Filter</button>
+    <br><br>
+
+    <table id="leadTable" border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>FTD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated here -->
+        </tbody>
+    </table>
+    <br>
+    <a href="index.html">Back to Lead Form</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    async function fetchStatuses() {
+    const dateFilter = document.getElementById('dateFilter').value;
+    const response = await fetch('getstatuses.php', {
+        method: 'GET',
+    });
+    if (response.ok) {
+        const resData = await response.json();
+        const tableBody = document.getElementById('leadTable').getElementsByTagName('tbody')[0];
+        tableBody.innerHTML = '';
+        resData.data
+            .filter(data => !dateFilter || data.date === dateFilter)
+            .forEach(data => {
+                const row = tableBody.insertRow();
+                row.insertCell(0).textContent = data.id;
+                row.insertCell(1).textContent = data.email;
+                row.insertCell(2).textContent = data.status;
+                row.insertCell(3).textContent = data.ftd;
+            });
+    } else {
+        alert('Failed to fetch statuses');
+    }
+}
+
+// Инициализация таблицы при загрузке страницы
+window.onload = fetchStatuses;
+</script>
+
+
