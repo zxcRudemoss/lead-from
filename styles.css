@@ -1,0 +1,76 @@
+body {
+    background-image: url(/images/background-form.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.leadForm {
+    position: relative;
+    background: #a76f6f45;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.318);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3f444a;
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #aeadad;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 60%;
+    margin: 0 auto;
+    background-color: #fffdfd;
+}
+
+button {
+    background-color: #ba3e3e;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    background-color: #bf7373;
+}
+
+.email {
+    margin-right: 38px;
+}
+
+label {
+    color: #575454;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
