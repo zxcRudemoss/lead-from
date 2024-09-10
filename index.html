@@ -7,24 +7,28 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Submit Lead</h1>
-    <form id="leadForm">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required><br><br>
+    <div class="form-container">
+        <h1>Submit Lead</h1>
+        <form id="leadForm" class="leadForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required><br><br>
 
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required><br><br>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required><br><br>
 
-        <label for="phone">Phone: +38</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="phone">Phone: +38</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+            <label for="email" class="email">Email:</label>
+            <input type="email" id="email" name="email" class="email" required><br><br>
 
-        <button type="submit">Submit</button>
-    </form>
-    <br>
-    <a href="status.html">View Lead Statuses</a>
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+        <a href="status.html">View Lead Statuses</a>
+    </div>
+    
+
 
     <script src="script.js"></script>
     <script src="validation.js"></script>
