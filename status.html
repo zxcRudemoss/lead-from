@@ -4,31 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lead Statuses</title>
+    <link rel="stylesheet" href="/lead-statuses.css">
 </head>
 <body>
-    <h1>Lead Statuses</h1>
-    <label for="dateFilter">Filter by Date:</label>
-    <input type="date" id="dateFilter">
-    <button onclick="fetchStatuses()">Apply Filter</button>
-    <br><br>
+    <div>
+        <div class="container">
+            <h1>Lead Statuses</h1>
+            <label for="dateFilter">Filter by Date:</label>
+            <input type="date" id="dateFilter">
+            <button onclick="fetchStatuses()">Apply Filter</button>
+            <br><br>
+        </div>
 
-    <table id="leadTable" border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>FTD</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Rows will be populated here -->
-        </tbody>
-    </table>
-    <br>
-    <a href="index.html">Back to Lead Form</a>
+        
+        <table id="leadTable" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>FTD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated here -->
+            </tbody>
+        </table>
+        <br>
+        <a href="index.html">Back to Lead Form</a>
+    </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
 <script>
