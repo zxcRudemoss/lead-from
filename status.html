@@ -8,14 +8,18 @@
 </head>
 <body>
     <div>
+        <h1>Lead Statuses</h1>
         <div class="container">
-            <h1>Lead Statuses</h1>
-            <label for="dateFilter">Filter by Date:</label>
-            <input type="date" id="dateFilter">
-            <button onclick="fetchStatuses()">Apply Filter</button>
-            <br><br>
-        </div>
 
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+    
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+            
+        </div>
+        <button onclick="fetchStatuses()">Apply Filter</button>
+        <br><br>
         
         <table id="leadTable" border="1">
             <thead>
@@ -40,16 +44,25 @@
 </html>
 <script>
     async function fetchStatuses() {
-    const dateFilter = document.getElementById('dateFilter').value;
+    const date_from = document.getElementById('startDate').value;
+    const date_to = document.getElementById('endDate').value;
+
     const response = await fetch('getstatuses.php', {
-        method: 'GET',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            date_from,
+            date_to,
+        }),
     });
+
     if (response.ok) {
         const resData = await response.json();
         const tableBody = document.getElementById('leadTable').getElementsByTagName('tbody')[0];
         tableBody.innerHTML = '';
         resData.data
-            .filter(data => !dateFilter || data.date === dateFilter)
             .forEach(data => {
                 const row = tableBody.insertRow();
                 row.insertCell(0).textContent = data.id;
