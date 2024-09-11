@@ -31,7 +31,7 @@ h1 {
 input {
     padding: 8px;
     border: 1px solid #aeadad;
-    border-radius: 10px;
+    border-radius: 12px;
     box-sizing: border-box;
     width: 60%;
     margin: 0 auto;
@@ -40,10 +40,10 @@ input {
 
 button {
     background-color: #ba3e3e;
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
     width: 40%;
